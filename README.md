@@ -6,6 +6,14 @@
 
 Aplicação de exemplo de aplicação de Design Patterns na prática em um projeto WebAPI .NET Core 3.1 utilizada na palestra "Aplicando design patterns na prática com C#" ([Link Apresentação](Apresenta%C3%A7%C3%A3o/Aplicando%20design%20patterns%20na%20pr%C3%A1tica%20com%20C%23.pdf))
 
+---
+
+## Adição de verificador para Paraíba
+
+Adicionado classe `DetranPBVerificadorDebitosRepository` para extender funcionalidade do sistema, além disto a classe contém uma função para gerar valores aleatórios de espera, recebendo um valor mínimo e máximo escolhendo um valor aleatório no intervalo.
+
+---
+
 ## Testes de Cobertura
 
 Passo a passo sobre como executar os testes unitários (e calcular o code coverage) localmente antes de realizar o commit.
