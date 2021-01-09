@@ -104,6 +104,7 @@ namespace DesignPatternSamples.WebAPI
                 .Decorate<IDetranVerificadorDebitosService, DetranVerificadorDebitosDecoratorCache>()
                 .Decorate<IDetranVerificadorDebitosService, DetranVerificadorDebitosDecoratorLogger>()
                 .AddSingleton<IDetranVerificadorDebitosFactory, DetranVerificadorDebitosFactory>()
+                .AddTransient<DetranPBVerificadorDebitosRepository>()
                 .AddTransient<DetranPEVerificadorDebitosRepository>()
                 .AddTransient<DetranSPVerificadorDebitosRepository>()
                 .AddTransient<DetranRJVerificadorDebitosRepository>()
@@ -126,6 +127,7 @@ namespace DesignPatternSamples.WebAPI
         public static IApplicationBuilder UseDetranVerificadorDebitosFactory(this IApplicationBuilder app)
         {
             app.ApplicationServices.GetService<IDetranVerificadorDebitosFactory>()
+                .Register("PB", typeof(DetranPBVerificadorDebitosRepository))
                 .Register("PE", typeof(DetranPEVerificadorDebitosRepository))
                 .Register("RJ", typeof(DetranRJVerificadorDebitosRepository))
                 .Register("SP", typeof(DetranSPVerificadorDebitosRepository))
